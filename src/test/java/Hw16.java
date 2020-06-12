@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Hw16 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -18,6 +18,8 @@ public class Hw16 {
 
         driver.findElement(By.id("searchbox")).sendKeys("ноутбук");
         driver.findElement(By.id("doSearch")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//*[@id=\"page-catalog\"]/div[1]/div[1]/div[2]/aside/div/div[3]/div[1]/div[3]/div[3]/ul/li[1]/label")).click();
 
 
         //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
